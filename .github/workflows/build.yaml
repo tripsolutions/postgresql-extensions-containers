@@ -1,9 +1,6 @@
 name: Build and Push
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       ext_name:
