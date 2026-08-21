@@ -1,6 +1,6 @@
 ARG BASE=ghcr.io/cloudnative-pg/postgresql:18-minimal-trixie
 ARG PG_MAJOR=18
-ARG EXT_VERSION=1.6.7-3.pgdg13+1
+ARG EXT_VERSION=1.6.7
 FROM $BASE AS builder
 
 ARG PG_MAJOR
@@ -9,7 +9,7 @@ ARG EXT_VERSION
 USER 0
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends "postgresql-${PG_MAJOR}-cron=${EXT_VERSION}"
+RUN apt-get install -y --no-install-recommends "postgresql-${PG_MAJOR}-cron=${EXT_VERSION}*"
 
 FROM scratch
 
