@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - cron
-          - timescale
+          - timescaledb
       pg_major:
         description: 'PostgreSQL major version'
         required: true
