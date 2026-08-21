@@ -22,7 +22,7 @@ ARG EXT_VERSION
 COPY --from=builder /usr/share/doc/timescaledb-2-${EXT_VERSION}-postgresql-${PG_MAJOR}/copyright /licenses/postgresql-${PG_MAJOR}-timescaledb/
 
 # Libraries
-COPY --from=builder /usr/lib/postgresql/${PG_MAJOR}/lib/timescaledb-*.so /lib/
+COPY --from=builder /usr/lib/postgresql/${PG_MAJOR}/lib/timescaledb*.so /lib/
 
 # Share
 COPY --from=builder /usr/share/postgresql/${PG_MAJOR}/extension/timescaledb* /share/extension/
